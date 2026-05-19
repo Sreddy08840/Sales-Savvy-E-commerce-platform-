@@ -137,7 +137,7 @@ Ensure you have the following installed/configured:
         <sub><b>Sreddy08840</b></sub>
       </a><br/>
       <sub>🌱 Creator & Lead Developer</sub><br/>
-      <sub>Full-Stack · Voice AI · ML Integration</sub>
+      <sub>Full-Stack · React · Supabase · E-commerce</sub>
     </td>
   </tr>
 </table>
