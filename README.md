@@ -29,7 +29,7 @@
 - [Tech Stack](#️-tech-stack)
 - [Database Schema](#-database-schema)
 - [Getting Started](#-getting-started)
-- [License & Author](#-license--author)
+- [Contributors](#-contributors)
 
 ---
 
@@ -127,8 +127,19 @@ Ensure you have the following installed/configured:
 
 ---
 
-## 👤 License & Author
+## 👥 Contributors
 
-Created and maintained by **[Sreddy08840](https://github.com/Sreddy08840)**.
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Sreddy08840">
+        <img src="https://github.com/Sreddy08840.png" width="100px;" alt="Sreddy08840"/><br/>
+        <sub><b>Sreddy08840</b></sub>
+      </a><br/>
+      <sub>🌱 Creator & Lead Developer</sub><br/>
+      <sub>Full-Stack · Voice AI · ML Integration</sub>
+    </td>
+  </tr>
+</table>
 
 If you find this project helpful, consider giving it a ⭐️ on GitHub!
