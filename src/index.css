@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sales Savvy — Editorial / Premium design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Bone / cream paper palette */
+    --background: 38 30% 96%;
+    --foreground: 25 20% 12%;
+
+    --card: 38 30% 96%;
+    --card-foreground: 25 20% 12%;
+
+    --popover: 38 30% 98%;
+    --popover-foreground: 25 20% 12%;
+
+    /* Espresso / ink primary */
+    --primary: 25 25% 14%;
+    --primary-foreground: 38 30% 96%;
+
+    --secondary: 35 18% 88%;
+    --secondary-foreground: 25 25% 14%;
+
+    --muted: 35 18% 90%;
+    --muted-foreground: 25 10% 38%;
+
+    /* Burnt terracotta accent */
+    --accent: 18 45% 45%;
+    --accent-foreground: 38 30% 96%;
+
+    --destructive: 0 60% 42%;
+    --destructive-foreground: 38 30% 96%;
+
+    --border: 30 15% 82%;
+    --input: 30 15% 82%;
+    --ring: 25 25% 14%;
+
+    --radius: 0.125rem;
+
+    /* Editorial-specific tokens */
+    --paper: 38 30% 96%;
+    --ink: 25 25% 14%;
+    --terracotta: 18 45% 45%;
+    --sand: 35 25% 80%;
+    --bone: 38 35% 92%;
+
+    --gradient-warm: linear-gradient(180deg, hsl(38 35% 94%), hsl(35 25% 88%));
+    --shadow-soft: 0 30px 60px -30px hsl(25 25% 14% / 0.18);
+    --shadow-card: 0 1px 0 0 hsl(30 15% 82%);
+
+    --transition-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 38 30% 96%;
+    --sidebar-foreground: 25 20% 12%;
+    --sidebar-primary: 25 25% 14%;
+    --sidebar-primary-foreground: 38 30% 96%;
+    --sidebar-accent: 35 18% 90%;
+    --sidebar-accent-foreground: 25 25% 14%;
+    --sidebar-border: 30 15% 82%;
+    --sidebar-ring: 25 25% 14%;
+  }
+
+  .dark {
+    --background: 25 18% 8%;
+    --foreground: 38 25% 92%;
+    --card: 25 18% 10%;
+    --card-foreground: 38 25% 92%;
+    --popover: 25 18% 10%;
+    --popover-foreground: 38 25% 92%;
+    --primary: 38 30% 92%;
+    --primary-foreground: 25 25% 14%;
+    --secondary: 25 12% 18%;
+    --secondary-foreground: 38 25% 92%;
+    --muted: 25 12% 18%;
+    --muted-foreground: 35 12% 60%;
+    --accent: 18 45% 55%;
+    --accent-foreground: 25 25% 14%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 38 25% 92%;
+    --border: 25 12% 22%;
+    --input: 25 12% 22%;
+    --ring: 38 25% 80%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  html { -webkit-font-smoothing: antialiased; }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1, 0 0 0 0 0.08, 0 0 0 0 0.06, 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    mix-blend-mode: multiply;
+  }
+}
