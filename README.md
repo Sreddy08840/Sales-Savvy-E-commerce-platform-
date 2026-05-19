@@ -1,56 +1,134 @@
-# Sales Savvy - E-commerce Platform
+<div align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E" alt="Vite" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white" alt="Stripe" />
 
-A modern, responsive full-stack E-commerce web application designed to provide a premium shopping experience for everyday objects, apparel, and home accessories.
+  <br />
+  <br />
 
-## About the Project
+  <h1>🛍️ Sales Savvy</h1>
+  
+  <p>
+    <strong>A Premium, Modern, and Responsive Full-Stack E-commerce Platform.</strong><br>
+    <em>Beautifully crafted to deliver a seamless end-to-end shopping experience.</em>
+  </p>
 
-Sales Savvy is a beautifully crafted e-commerce platform built to demonstrate a seamless end-to-end shopping journey. It features an intuitive user interface with categorized product browsing, a persistent shopping cart, and a secure checkout process. The platform is integrated with Supabase for robust backend services, including authentication, database management, and Row Level Security (RLS) to ensure data privacy between users. Stripe is integrated to handle secure payment tokenization.
+  <br />
 
-### ✨ Key Features
+</div>
 
-- **User Authentication**: Secure sign-up and login powered by Supabase Auth.
-- **Product Catalog**: Browse products by categories (Apparel, Accessories, Home, Objects).
-- **Shopping Cart**: Add, remove, and manage quantities of items in the cart securely linked to user profiles.
-- **Checkout & Payments**: Streamlined checkout flow with Stripe payment integration.
-- **Order History**: Users can view their past orders and order items.
-- **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop devices.
-- **Role-Based Access**: Separation of 'admin' and 'customer' roles for future scalability.
+<hr />
+
+## 📖 Table of Contents
+
+- [About the Project](#-about-the-project)
+- [Key Features](#-key-features)
+- [Tech Stack](#️-tech-stack)
+- [Database Schema](#-database-schema)
+- [Getting Started](#-getting-started)
+- [License & Author](#-license--author)
+
+---
+
+## 🌟 About the Project
+
+**Sales Savvy** is an advanced, production-ready e-commerce platform built to demonstrate best practices in modern web development. From an elegant frontend built with **React** and **Tailwind CSS** (via Shadcn UI) to a robust backend powered purely by **Supabase** (PostgreSQL with Row Level Security), the platform covers all essential shopping workflows. 
+
+Whether it's browsing a categorized product catalog, securely adding items to a persistent cart, or checking out with **Stripe**, Sales Savvy provides an exceptional UX.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|---------|-------------|
+| 🔐 **Authentication** | Secure sign-up/login powered by Supabase Auth with auto-assigned user roles. |
+| 📦 **Product Catalog** | Browse products dynamically filtered by categories (`Apparel`, `Accessories`, `Home`, `Objects`). |
+| 🛒 **Shopping Cart** | Persistent cart state securely linked to individual user profiles via Postgres RLS. |
+| 💳 **Secure Checkout** | Streamlined checkout flow fully integrated with Stripe payment tokenization. |
+| 📊 **Order Management** | Comprehensive order history tracking past orders and exact product snapshots. |
+| 📱 **Fully Responsive** | Carefully tailored layouts optimized for mobile, tablet, and desktop viewing. |
+| 🛡️ **Role-Based Access** | Built-in separation between `admin` and `customer` roles directly at the database level. |
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS & Shadcn UI (Radix UI primitives)
-- **Routing**: React Router DOM (`react-router-dom`)
-- **State Management**: TanStack React Query (`@tanstack/react-query`)
-- **Backend & Database**: Supabase (PostgreSQL with Row Level Security)
+### Frontend
+- **Framework**: React 18 
+- **Language**: TypeScript
+- **Build Tool**: Vite (Lightning fast HMR)
+- **Styling**: Tailwind CSS & Shadcn UI (accessible Radix UI primitives)
+- **Routing**: React Router DOM
+- **State Management**: TanStack React Query (for caching server state)
+
+### Backend & Infrastructure
+- **Database**: Supabase (PostgreSQL)
+- **Security**: Supabase Row Level Security (RLS) & Triggers
 - **Payments**: Stripe (`@stripe/react-stripe-js`)
+
+---
+
+## 🗄️ Database Schema
+
+The platform relies on a normalized Postgres schema with strict RLS policies to guarantee data isolation:
+- `auth.users` (Managed by Supabase)
+- `profiles` (Auto-created on signup)
+- `user_roles` (Admin / Customer mappings)
+- `categories` & `products` (Publicly accessible catalog)
+- `cart_items` (Strictly isolated per user)
+- `orders` & `order_items` (Secure transaction history)
+
+---
 
 ## 🚀 Getting Started
 
+Follow these instructions to get a copy of the project up and running on your local machine.
+
 ### Prerequisites
 
-- Node.js installed on your local machine
-- A Supabase account and project setup
-- A Stripe developer account
+Ensure you have the following installed/configured:
+- **Node.js** (v18 or higher recommended)
+- A **Supabase** account and project (for database and auth)
+- A **Stripe** developer account (for payments)
 
 ### Installation
 
-1. Clone the repository
+1. **Clone the repository**
    ```bash
    git clone https://github.com/Sreddy08840/Sales-Savvy-E-commerce-platform-.git
    cd Sales-Savvy-E-commerce-platform-
    ```
-2. Install the dependencies
+
+2. **Install the dependencies**
    ```bash
    npm install
    ```
-3. Run the development server
+
+3. **Configure Environment Variables**
+   Create a `.env` file in the root directory and add your Supabase and Stripe keys:
+   ```env
+   VITE_SUPABASE_PROJECT_ID=your_project_id
+   VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+   ```
+
+4. **Run the development server**
    ```bash
    npm run dev
    ```
-4. The application will start locally on `http://localhost:8080/`.
 
-## Author
+5. **Explore the app**
+   Open your browser and navigate to `http://localhost:8080/`.
 
-- **Sreddy08840** - [GitHub Profile](https://github.com/Sreddy08840)
+---
+
+## 👤 License & Author
+
+Created and maintained by **[Sreddy08840](https://github.com/Sreddy08840)**.
+
+If you find this project helpful, consider giving it a ⭐️ on GitHub!
